@@ -3,36 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hỗ Trợ - White Noise With Night Light</title>
+    <title>White Noise With Night Light - Support/Hỗ Trợ</title>
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #f9f9f9;
+            --light-accent: #e8f4fc;
+            --dark-accent: #7f8c8d;
+            --border-color: #eee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--secondary-color);
+            background-color: var(--background-color);
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+        }
+        
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        
+        .language-btn {
+            background: var(--light-accent);
+            border: none;
+            padding: 5px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        
+        .language-btn.active {
+            background: var(--primary-color);
+            color: white;
         }
         
         header {
             text-align: center;
             margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
         }
         
         h1 {
-            color: #2c3e50;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
         }
         
         h2 {
-            color: #3498db;
-            margin-top: 30px;
+            color: var(--primary-color);
+            margin: 30px 0 15px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
         }
         
         .contact-info {
-            background-color: #e8f4fc;
+            background-color: var(--light-accent);
             padding: 20px;
             border-radius: 5px;
             margin: 30px 0;
@@ -44,89 +84,262 @@
         
         .faq-question {
             font-weight: bold;
-            color: #2980b9;
+            color: var(--primary-color);
         }
         
         footer {
             margin-top: 50px;
             text-align: center;
             font-size: 0.9em;
-            color: #7f8c8d;
-            border-top: 1px solid #eee;
+            color: var(--dark-accent);
+            border-top: 1px solid var(--border-color);
             padding-top: 20px;
+        }
+        
+        .lang {
+            display: none;
+        }
+        
+        .lang.active {
+            display: block;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 600px) {
             body {
                 padding: 10px;
             }
+            
+            .language-btn {
+                padding: 5px 10px;
+                margin-left: 5px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="language-btn active" onclick="switchLanguage('vi')">Tiếng Việt</button>
+        <button class="language-btn" onclick="switchLanguage('en')">English</button>
+    </div>
+    
     <header>
         <h1>White Noise With Night Light</h1>
-        <p>Hỗ trợ chính thức cho ứng dụng White Noise With Night Light</p>
+        
+        <!-- Vietnamese -->
+        <p class="lang vi active">Hỗ trợ chính thức cho ứng dụng White Noise With Night Light</p>
+        
+        <!-- English -->
+        <p class="lang en">Official support for White Noise With Night Light app</p>
     </header>
     
     <main>
         <section id="about">
-            <h2>Giới Thiệu</h2>
-            <p>White Noise With Night Light là ứng dụng kết hợp hoàn hảo giữa âm thanh thư giãn và đèn ngủ thông minh, giúp bạn có giấc ngủ ngon và sâu hơn. Tùy chỉnh ánh sáng và âm thanh theo sở thích để tạo không gian thư giãn lý tưởng.</p>
+            <h2 class="lang vi active">Giới Thiệu</h2>
+            <h2 class="lang en">About</h2>
+            
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <p>White Noise With Night Light là ứng dụng kết hợp hoàn hảo giữa âm thanh thư giãn và đèn ngủ thông minh, giúp bạn có giấc ngủ ngon và sâu hơn. Tùy chỉnh ánh sáng và âm thanh theo sở thích để tạo không gian thư giãn lý tưởng.</p>
+                <p>Với thiết kế tối ưu theo tiêu chuẩn SwiftUI mới nhất, ứng dụng mang đến giao diện trực quan, mượt mà và thân thiện với người dùng. Chúng tôi liên tục cập nhật và bổ sung tính năng mới để nâng cao trải nghiệm của bạn.</p>
+            </div>
+            
+            <!-- English -->
+            <div class="lang en">
+                <p>White Noise With Night Light is a perfect combination of relaxing sounds and smart night light to help you sleep better and deeper. Customize light and sound to create your ideal relaxation space.</p>
+                <p>Designed with the latest SwiftUI standards, the app provides an intuitive, smooth, and user-friendly interface. We continuously update and add new features to enhance your experience.</p>
+            </div>
+        </section>
+        
+        <section id="features">
+            <h2 class="lang vi active">Tính Năng Chính</h2>
+            <h2 class="lang en">Key Features</h2>
+            
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <ul>
+                    <li>Đèn ngủ thông minh với nhiều màu sắc và độ sáng tùy chỉnh</li>
+                    <li>Thư viện âm thanh đa dạng: mưa rơi, sóng biển, gió nhẹ, và nhiều hơn nữa</li>
+                    <li>Tùy chỉnh kết hợp ánh sáng và âm thanh theo sở thích</li>
+                    <li>Hẹn giờ tắt tự động thông minh với tùy chọn fade-out êm dịu</li>
+                    <li>Lưu và tải các cài đặt yêu thích với tính năng đồng bộ đám mây</li>
+                    <li>Widget màn hình chính để truy cập nhanh các cài đặt yêu thích</li>
+                    <li>Thống kê và phân tích giấc ngủ cơ bản</li>
+                    <li>Tích hợp với Siri Shortcuts cho điều khiển giọng nói</li>
+                </ul>
+            </div>
+            
+            <!-- English -->
+            <div class="lang en">
+                <ul>
+                    <li>Smart night light with customizable colors and brightness</li>
+                    <li>Diverse sound library: rain, ocean waves, gentle wind, and more</li>
+                    <li>Customize light and sound combinations to your preference</li>
+                    <li>Smart auto-off timer with gentle fade-out option</li>
+                    <li>Save and load your favorite settings with cloud sync</li>
+                    <li>Home screen widgets for quick access to favorite settings</li>
+                    <li>Basic sleep statistics and analysis</li>
+                    <li>Siri Shortcuts integration for voice control</li>
+                </ul>
+            </div>
         </section>
         
         <section id="faq">
-            <h2>Câu Hỏi Thường Gặp</h2>
+            <h2 class="lang vi active">Câu Hỏi Thường Gặp</h2>
+            <h2 class="lang en">Frequently Asked Questions</h2>
             
-            <div class="faq-item">
-                <p class="faq-question">Ứng dụng có hoạt động khi tắt màn hình không?</p>
-                <p>Có, ứng dụng được thiết kế để phát âm thanh liên tục ngay cả khi màn hình tắt, giúp tiết kiệm pin và tối ưu trải nghiệm.</p>
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <div class="faq-item">
+                    <p class="faq-question">Ứng dụng có hoạt động khi tắt màn hình không?</p>
+                    <p>Có, ứng dụng được thiết kế để phát âm thanh liên tục ngay cả khi màn hình tắt, giúp tiết kiệm pin và tối ưu trải nghiệm.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Làm thế nào để tùy chỉnh hẹn giờ tắt tự động?</p>
+                    <p>Nhấn vào biểu tượng đồng hồ trên màn hình chính, sau đó bạn có thể thiết lập thời gian tự động tắt và tùy chọn fade-out êm dịu.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Tôi có thể lưu cài đặt yêu thích không?</p>
+                    <p>Có, nhấn vào biểu tượng trái tim để lưu cài đặt hiện tại, bạn có thể đặt tên và truy cập lại bất kỳ lúc nào.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Ứng dụng có hỗ trợ widget không?</p>
+                    <p>Có, ứng dụng cung cấp widget màn hình chính để bạn có thể truy cập nhanh các cài đặt yêu thích.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Làm thế nào để tôi có thể đồng bộ cài đặt giữa nhiều thiết bị?</p>
+                    <p>Chức năng đồng bộ đám mây sẽ tự động đồng bộ các cài đặt của bạn giữa các thiết bị iOS khi bạn đăng nhập cùng một tài khoản iCloud.</p>
+                </div>
             </div>
             
-            <div class="faq-item">
-                <p class="faq-question">Làm thế nào để tùy chỉnh hẹn giờ tắt tự động?</p>
-                <p>Nhấn vào biểu tượng đồng hồ trên màn hình chính, sau đó bạn có thể thiết lập thời gian tự động tắt và tùy chọn fade-out êm dịu.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Tôi có thể lưu cài đặt yêu thích không?</p>
-                <p>Có, nhấn vào biểu tượng trái tim để lưu cài đặt hiện tại, bạn có thể đặt tên và truy cập lại bất kỳ lúc nào.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Ứng dụng có hỗ trợ widget không?</p>
-                <p>Có, ứng dụng cung cấp widget màn hình chính để bạn có thể truy cập nhanh các cài đặt yêu thích.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Làm thế nào để cài đặt và sử dụng tính năng Siri Shortcuts?</p>
-                <p>Vào phần Cài đặt trong ứng dụng, chọn "Siri Shortcuts" và tạo lệnh thoại tùy chỉnh cho các tác vụ bạn muốn.</p>
+            <!-- English -->
+            <div class="lang en">
+                <div class="faq-item">
+                    <p class="faq-question">Does the app work when the screen is off?</p>
+                    <p>Yes, the app is designed to continuously play sounds even when the screen is off, saving battery and optimizing your experience.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">How do I customize the auto-off timer?</p>
+                    <p>Tap the clock icon on the main screen, then you can set the auto-off time and gentle fade-out options.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Can I save my favorite settings?</p>
+                    <p>Yes, tap the heart icon to save your current settings, you can name them and access them anytime.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">Does the app support widgets?</p>
+                    <p>Yes, the app provides home screen widgets for quick access to your favorite settings.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">How can I sync settings between multiple devices?</p>
+                    <p>The cloud sync feature will automatically sync your settings between iOS devices when you're signed in with the same iCloud account.</p>
+                </div>
             </div>
         </section>
         
         <section id="contact" class="contact-info">
-            <h2>Liên Hệ Hỗ Trợ</h2>
-            <p>Nếu bạn có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ với chúng tôi:</p>
-            <p>Email: <a href="mailto:support@whitenoisenightlight.com">support@whitenoisenightlight.com</a></p>
-            <p>Hỗ trợ kỹ thuật: <a href="mailto:help@whitenoisenightlight.com">help@whitenoisenightlight.com</a></p>
+            <h2 class="lang vi active">Liên Hệ Hỗ Trợ</h2>
+            <h2 class="lang en">Contact Support</h2>
+            
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <p>Nếu bạn có bất kỳ câu hỏi hoặc vấn đề nào, vui lòng liên hệ với chúng tôi:</p>
+                <p>Email: <a href="mailto:support@whitenoisenightlight.com">support@whitenoisenightlight.com</a></p>
+                <p>Hỗ trợ kỹ thuật: <a href="mailto:help@whitenoisenightlight.com">help@whitenoisenightlight.com</a></p>
+            </div>
+            
+            <!-- English -->
+            <div class="lang en">
+                <p>If you have any questions or issues, please contact us:</p>
+                <p>Email: <a href="mailto:support@whitenoisenightlight.com">support@whitenoisenightlight.com</a></p>
+                <p>Technical support: <a href="mailto:help@whitenoisenightlight.com">help@whitenoisenightlight.com</a></p>
+            </div>
         </section>
         
         <section id="privacy">
-            <h2>Chính Sách Bảo Mật</h2>
-            <p>Chúng tôi coi trọng quyền riêng tư của bạn. Ứng dụng White Noise With Night Light không thu thập bất kỳ thông tin cá nhân nào ngoài những gì cần thiết cho chức năng của ứng dụng.</p>
-            <p>Dữ liệu cài đặt được lưu trữ cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng đồng bộ đám mây, dữ liệu sẽ được lưu trữ an toàn trên iCloud dưới tài khoản Apple của bạn.</p>
-            <p><a href="#" onclick="alert('Chính sách đầy đủ sẽ được hiển thị ở đây');">Xem chính sách bảo mật đầy đủ</a></p>
+            <h2 class="lang vi active">Chính Sách Bảo Mật</h2>
+            <h2 class="lang en">Privacy Policy</h2>
+            
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <p>Chúng tôi coi trọng quyền riêng tư của bạn. Ứng dụng White Noise With Night Light không thu thập bất kỳ thông tin cá nhân nào ngoài những gì cần thiết cho chức năng của ứng dụng.</p>
+                <p>Dữ liệu cài đặt được lưu trữ cục bộ trên thiết bị của bạn. Nếu bạn sử dụng tính năng đồng bộ đám mây, dữ liệu sẽ được lưu trữ an toàn trên iCloud dưới tài khoản Apple của bạn.</p>
+                <p><a href="#" onclick="alert('Chính sách đầy đủ sẽ được hiển thị ở đây');">Xem chính sách bảo mật đầy đủ</a></p>
+            </div>
+            
+            <!-- English -->
+            <div class="lang en">
+                <p>We value your privacy. The White Noise With Night Light app does not collect any personal information beyond what is necessary for the app's functionality.</p>
+                <p>Settings data is stored locally on your device. If you use the cloud sync feature, data will be securely stored on iCloud under your Apple account.</p>
+                <p><a href="#" onclick="alert('Full policy would be displayed here');">View full privacy policy</a></p>
+            </div>
         </section>
         
         <section id="terms">
-            <h2>Điều Khoản Sử Dụng</h2>
-            <p>Bằng cách sử dụng ứng dụng White Noise With Night Light, bạn đồng ý với các điều khoản sử dụng của chúng tôi.</p>
-            <p><a href="#" onclick="alert('Điều khoản đầy đủ sẽ được hiển thị ở đây');">Xem điều khoản sử dụng đầy đủ</a></p>
+            <h2 class="lang vi active">Điều Khoản Sử Dụng</h2>
+            <h2 class="lang en">Terms of Use</h2>
+            
+            <!-- Vietnamese -->
+            <div class="lang vi active">
+                <p>Bằng cách sử dụng ứng dụng White Noise With Night Light, bạn đồng ý với các điều khoản sử dụng của chúng tôi.</p>
+                <p><a href="#" onclick="alert('Điều khoản đầy đủ sẽ được hiển thị ở đây');">Xem điều khoản sử dụng đầy đủ</a></p>
+            </div>
+            
+            <!-- English -->
+            <div class="lang en">
+                <p>By using the White Noise With Night Light app, you agree to our terms of use.</p>
+                <p><a href="#" onclick="alert('Full terms would be displayed here');">View full terms of use</a></p>
+            </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2024 White Noise With Night Light. Đã đăng ký bản quyền.</p>
+        <p class="lang vi active">&copy; 2024 White Noise With Night Light. Đã đăng ký bản quyền.</p>
+        <p class="lang en">&copy; 2024 White Noise With Night Light. All rights reserved.</p>
     </footer>
+    
+    <script>
+        function switchLanguage(lang) {
+            // Hide all language elements
+            const allLangElements = document.querySelectorAll('.lang');
+            allLangElements.forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show elements for selected language
+            const selectedLangElements = document.querySelectorAll(`.${lang}`);
+            selectedLangElements.forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Update active button
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeButton = document.querySelector(`.language-btn[onclick="switchLanguage('${lang}')"]`);
+            activeButton.classList.add('active');
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
